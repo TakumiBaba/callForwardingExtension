@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<body style="width:400px;">
+<p>Android側で提示された数値を入力してください。<input type="tel" id="number"></input><button id="submit">決定</button></p>
+</body>
+<script type="text/javascript" src="./jquery.js"></script>
+<script type="text/javascript">
+
+    if(window.localStorage['callAndroidKey']){
+        $('#number').val(window.localStorage['callAndroidKey']);
+    }
+
+    $('#submit').click(function(event){
+        window.alert("yeah");
+        //window.alert($('#number').val());
+        var value = $('#number').val();
+        var key = {number : valie};
+        window.localStorage['callAndroidKey'] = JSON.stringify(key);
+        var notification = chrome.extension.getBackgroundPage().webkitNotifications.createNotification("",from,"電話が鳴ってます！ : " + key);
+        notification.show();
+    });
+
+</script>
+</html>

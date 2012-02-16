@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript" src="./jquery.js"></script>
+    <script type="text/javascript">
+        function getStorage(){return window.localStorage;}
+        function getItem(key){return getStorage().getItem(key);}
+        function setItem(key,value){return getStorage().setItem(key,value);}
+        function removeItem(key){return getStorage().removeItem(key);}
+
+    </script>
+</head>
+<body>
+<p>Android側で提示された数値を入力してください。<input type="tel" id="number"></input><button id="submit">決定</button></p>
+</body>
+<script>
+    if(getItem("id")){
+        $("#number").val(getItem("id"));
+    }
+    $("#submit").click(function(){
+        window.alert("入力しました！");
+        var value = $("#number").val();
+        setItem("id",value);
+    })
+</script>
+</html>
