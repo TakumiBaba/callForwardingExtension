@@ -13,7 +13,8 @@
     </script>
 </head>
 <body>
-<p>Android側で提示された数値を入力してください。<input type="tel" id="number"></input><button id="submit">決定</button></p>
+<p>ID<input type="tel" id="user"></input></p>
+<p>PASS<input type="tel" id="pass"></input><button id="submit">決定</button></p>
 </body>
 <script>
     if(getItem("id")){
@@ -21,8 +22,8 @@
     }
     $("#submit").click(function(){
         window.alert("入力しました！");
-        var value = $("#number").val();
-        setItem("id",value);
+        setItem("userID",$("#user").val());
+        setItem("password",$("#pass").val());
     })
 </script>
 </html>

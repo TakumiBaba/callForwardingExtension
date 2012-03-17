@@ -17,7 +17,6 @@
                                "main.js"
                               ],
                         "css": [
-								"bootstrap.css",
                                 "main.css"
                                ],
                         "matches": [
